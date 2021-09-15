@@ -27,8 +27,15 @@ repositories {
 }
 
 dependencies {
+    // chap 1
     implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    // chap 2
     implementation('org.projectlombok:lombok') // 롬복: 게터 세터 디폴트컨스트럭터, toString 등을 어노테이션으로 자동 생성.
     annotationProcessor('org.projectlombok:lombok') // ?
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    // chap 3
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') // 스프링부트ㅡ용 spring data jpa 추상화 라이브러리
+                                                                           // 스프링부트 버전에 맞춰 자동으로 jpa관련 라이브러리 버전 관리
+    implementation('com.h2database:h2') // 인메모리 관계형 데이터 베이스,
+                                        // 메모리 실해 -> 재시작시 초기화 -> 테스트용도 애용
 }

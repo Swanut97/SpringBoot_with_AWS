@@ -15,6 +15,7 @@ public class HelloController {
     }
 
     @GetMapping("/hello/dto") // 책에서는 언급해주지 않음. => 헬로컨트롤러테스트의 헬로디토가_리턴됨이 정상작동 X
+                                // => 책을 자세히 보지 않은 본은의 미스: 책에 있었습니다...
     public HelloResponseDto helloDto(@RequestParam("name") String name, @RequestParam("amount") int amount){
         return new HelloResponseDto(name,amount);
     }

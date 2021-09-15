@@ -30,17 +30,17 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void helloDto가_리턴된다() throws Exception {  // 책에선 이것만 했는데 되지만
-        String name = "hello";                          // 난 왜인지 안됨. -> HelloController에 GetMapping 추가하니 됨,
-        int amount = 1000;                              // 이유를 알아 볼 예정.
+    public void helloDto가_리턴된다() throws Exception {
+        String name = "hello";
+        int amount = 1000;
 
         mvc.perform(
                     get("/hello/dto")
-                            .param("name", name)    //
+                            .param("name", name)    // param: API 테스트시 요청 파라미터 설정 (String만 가능)
                             .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name", is(name)))
-                .andExpect(jsonPath("$.amount", is(amount)));
+                .andExpect(jsonPath("$.name", is(name)))    // jsonPath: JSON 응답값을 필드별로 검증할 수 있는 메소드
+                .andExpect(jsonPath("$.amount", is(amount))); // $을 기준으로 필드명을 명시
     }
 }
 /*************************************************************
