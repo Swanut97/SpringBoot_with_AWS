@@ -49,7 +49,7 @@ public class PostsRepositoryTest {
     @Test
     public void BaseTimeEntity_등록() {
         // given
-        LocalDateTime now = LocalDateTime.of(2021, 9, 15, 20, 1);
+        LocalDateTime now = LocalDateTime.of(2021, 9, 15, 20, 1, 33); // 버릇처럼 초를 뺐는데, 초까지 기입 가능
         postsRepository.save(Posts.builder()
                         .title("title")
                         .content("content")
