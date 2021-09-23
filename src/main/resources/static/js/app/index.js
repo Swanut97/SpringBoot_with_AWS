@@ -9,7 +9,7 @@ var main = {
         $('#btn-update').on('click', function () { // btn-update라는 id를 가진 HTML 엘리먼트에 클릭이벤트 등록
             _this.update();
         });
-        $('#btn-delete').on('click', function () { // btn-update라는 id를 가진 HTML 엘리먼트에 클릭이벤트 등록
+        $('#btn-delete').on('click', function () { // btn-delete라는 id를 가진 HTML 엘리먼트에 클릭이벤트 등록
             _this.delete();
         });
     },

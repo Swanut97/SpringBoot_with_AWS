@@ -11,14 +11,14 @@
 <br>
 <!-- 목록 출력 영역 -->
 <table class="table table-horizontal table-boarded">
-    <thread class="thread-strong">
+    <thead class="thead-strong"> <!-- 관성처럼 thread로 썼었는데 t head 였습니다...ㅎ -->
         <tr>
         <th>게시글번호</th>
         <th>제목</th>
         <th>작성자</th>
         <th>최종수정일</th>
         </tr>
-    </thread>
+    </thead>
     <tbody id="tbody">
     {{#posts}} <!-- posts List를 순회 (반복문 역할) -->
         <tr>
