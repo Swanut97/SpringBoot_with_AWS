@@ -1,6 +1,5 @@
 package org.example.springboot.web;
 
-import org.example.springboot.domain.posts.PostsRepository;
 import org.example.springboot.service.posts.PostsService;
 import org.example.springboot.web.dto.PostsResponseDto;
 import org.example.springboot.web.dto.PostsSaveRequestDto;
