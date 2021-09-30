@@ -1,5 +1,6 @@
 package org.example.springboot.web;
 
+import org.example.springboot.config.auth.LoginUser;
 import org.example.springboot.config.auth.dto.SessionUser;
 import org.example.springboot.service.posts.PostsService;
 import org.example.springboot.web.dto.PostsResponseDto;
@@ -17,14 +18,12 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) { // model: 서버 템플릿 엔진에서 사용할 수 있는 객체로 저장
+    public String index(Model model, @LoginUser SessionUser user) { // model: 서버 템플릿 엔진에서 사용할 수 있는 객체로 저장
             // 여기서 가져온 결과를 posts로 index.mustache에 전달
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
