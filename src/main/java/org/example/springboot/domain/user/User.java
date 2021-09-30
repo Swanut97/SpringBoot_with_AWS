@@ -31,8 +31,8 @@ public class User {
     @Column
     private String picture;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING) // JPA 데이터베이스에 저장할 때의 Enum 값을 결정 // 기본적으론 int
+    @Column(nullable = false)    //  숫자로 저장되면 데이터베이스에서 확인시 무슨 코드인지 확인 불가 => String으로 저장
     private Role role;
 
     @Builder
