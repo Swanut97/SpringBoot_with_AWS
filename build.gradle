@@ -40,4 +40,9 @@ dependencies {
                                         // 메모리 실해 -> 재시작시 초기화 -> 테스트용도 애용
     // chap 4
     implementation('org.springframework.boot:spring-boot-starter-mustache') // 머스테치 추가, 스프링 부트에서 공식 지원하는 템플릿 엔진
+
+    // chap 5
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    implementation('org.springframework.session:spring-session-jdbc')
+    testImplementation('org.springframework.security:spring-security-test')
 }
