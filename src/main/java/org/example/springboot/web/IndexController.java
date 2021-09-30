@@ -28,8 +28,8 @@ public class IndexController {
         // SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 로그인 성공시 세션에 저장된 SessionUser를 가져옴
         
         if (user != null) { // 세션에 저장된 값이 있을 때만 model에서 userName으로 등록, 없으면 model엔 아묷도 없고 로그인 버튼이 보이게 됨.
-            model.addAttribute("userName", user.getName());
-        }
+            model.addAttribute("user", user); // index.mustach와 연동하기위해 userName을 주는 것이 아닌 user를 주고
+        }                                                   // 그로부터 이름을 직접 꺼내도록 유도
 
         return "index";
     }
