@@ -6,14 +6,16 @@
     <div class="row">
         <div class="col-md-6">
             <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-            {{#userName}}
-                Logged in as : <span id="user">{{userName}}</span>
+            {{#user}} <!-- 머스테치는 if문 없이 TF만 판단. 그래서 항상 최종값을 넘겨주어야 함. -->
+                Logged in as : <span id="user">{{name}}</span>
                 <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-            {{/userName}}
-            {{^userName}}
+                <!-- 스프링 시큐리티가 제공하는 로그아웃 url, 개발자가 별도의 로그아웃 url컨트롤러 만들 필요X -->
+            {{/user}}
+            {{^user}} <!-- 해당 값이 존재하지 않는 경우 여기로 빠짐, 여기서는 로그인 다시하게 끔 유도 -->
+                <!-- 스프링 시큐리티가 제공하는 로그인 url, 개발자가 별도의 로그인 url컨트롤러 만들 필요X -->
                 <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
                 <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-            {{/userName}}
+            {{/user}}
         </div>
     </div>
     <br>
